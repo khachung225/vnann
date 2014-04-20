@@ -1,0 +1,5 @@
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\output\net40\fastJSON.dll
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\output\net40\fastJSON.pdb
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\fastJSON\obj\Debug\fastJSON.csprojResolveAssemblyReference.cache
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\fastJSON\obj\Debug\fastJSON.dll
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\fastJSON\obj\Debug\fastJSON.pdb

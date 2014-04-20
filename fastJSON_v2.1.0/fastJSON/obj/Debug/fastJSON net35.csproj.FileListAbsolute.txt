@@ -1,0 +1,2 @@
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\fastJSON\obj\Debug\fastJSON net35.csprojResolveAssemblyReference.cache
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\fastJSON\obj\Debug\fastJSON.pdb

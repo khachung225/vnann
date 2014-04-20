@@ -1,0 +1,7 @@
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\bin\Debug\consoletest.exe
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\bin\Debug\consoletest.pdb
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\bin\Debug\fastJSON.dll
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\bin\Debug\fastJSON.pdb
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\obj\Debug\consoletest.csprojResolveAssemblyReference.cache
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\obj\Debug\consoletest.exe
+F:\Cao hoc\Luan van\source code\Sources2\FinancialMarketPredictorArticle\fastJSON_v2.1.0\consoletest\obj\Debug\consoletest.pdb
