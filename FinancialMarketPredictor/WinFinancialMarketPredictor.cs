@@ -6,6 +6,8 @@ using System.Globalization;
 using System.IO;
 using System.Timers;
 using System.Windows.Forms;
+using BaseEntity.Entity;
+using BaseEntity.Utils;
 using FinancialMarketPredictor.Entities;
 using FinancialMarketPredictor.Properties;
 using FinancialMarketPredictor.Utilities;
@@ -136,7 +138,8 @@ namespace FinancialMarketPredictor
 
             // Set the Interval to 2 seconds (2000 milliseconds).
             aTimer.Interval = 2000;
-           
+            label12.Text = AppGlobol.FolderPath;
+
         }
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)
@@ -197,7 +200,7 @@ namespace FinancialMarketPredictor
                          Counter = AppGlobol.Counter,
                          Ishoitu = AppGlobol.Ishoitu,
                          ListResult = AppGlobol.ListResult,
-                         TimeSpan = AppGlobol.TimeSpan,
+                         TotalMinute = AppGlobol.TimeSpan.TotalMinutes,
 
                      };
 

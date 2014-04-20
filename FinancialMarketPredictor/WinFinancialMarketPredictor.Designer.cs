@@ -37,6 +37,19 @@ namespace FinancialMarketPredictor
             this._labPathToPR = new System.Windows.Forms.Label();
             this._tbPathToUSDJPY = new System.Windows.Forms.TextBox();
             this._tbMain = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this._gbTrain = new System.Windows.Forms.GroupBox();
+            this.lblTimeTran = new System.Windows.Forms.Label();
+            this._dtpTrainUntil = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this._dtpTrainFrom = new System.Windows.Forms.DateTimePicker();
+            this._btnExport = new System.Windows.Forms.Button();
+            this._btnStop = new System.Windows.Forms.Button();
+            this._btnStartTraining = new System.Windows.Forms.Button();
+            this._dgvTrainingResults = new System.Windows.Forms.DataGridView();
+            this.Epoch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this._gbPredict = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,19 +64,6 @@ namespace FinancialMarketPredictor
             this.ActualSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PredictedSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ErrorDifference = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this._gbTrain = new System.Windows.Forms.GroupBox();
-            this.lblTimeTran = new System.Windows.Forms.Label();
-            this._dtpTrainUntil = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this._dtpTrainFrom = new System.Windows.Forms.DateTimePicker();
-            this._btnExport = new System.Windows.Forms.Button();
-            this._btnStop = new System.Windows.Forms.Button();
-            this._btnStartTraining = new System.Windows.Forms.Button();
-            this._dgvTrainingResults = new System.Windows.Forms.DataGridView();
-            this.Epoch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Error = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DoThi_GiaiTri = new ZedGraph.ZedGraphControl();
             this._tbPathToDow = new System.Windows.Forms.TextBox();
@@ -84,13 +84,14 @@ namespace FinancialMarketPredictor
             this.label10 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this._tbMain.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this._gbPredict.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._dgvPredictionResults)).BeginInit();
             this.tabPage2.SuspendLayout();
             this._gbTrain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgvTrainingResults)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this._gbPredict.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dgvPredictionResults)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._nudHiddenUnits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._nudHiddenLayers)).BeginInit();
@@ -143,6 +144,142 @@ namespace FinancialMarketPredictor
             this._tbMain.SelectedIndex = 0;
             this._tbMain.Size = new System.Drawing.Size(775, 358);
             this._tbMain.TabIndex = 6;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this._gbTrain);
+            this.tabPage2.Controls.Add(this._btnExport);
+            this.tabPage2.Controls.Add(this._btnStop);
+            this.tabPage2.Controls.Add(this._btnStartTraining);
+            this.tabPage2.Controls.Add(this._dgvTrainingResults);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(767, 332);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Train";
+            // 
+            // _gbTrain
+            // 
+            this._gbTrain.Controls.Add(this.lblTimeTran);
+            this._gbTrain.Controls.Add(this._dtpTrainUntil);
+            this._gbTrain.Controls.Add(this.label4);
+            this._gbTrain.Controls.Add(this.label3);
+            this._gbTrain.Controls.Add(this._dtpTrainFrom);
+            this._gbTrain.Location = new System.Drawing.Point(9, 1);
+            this._gbTrain.Name = "_gbTrain";
+            this._gbTrain.Size = new System.Drawing.Size(750, 60);
+            this._gbTrain.TabIndex = 12;
+            this._gbTrain.TabStop = false;
+            // 
+            // lblTimeTran
+            // 
+            this.lblTimeTran.AutoSize = true;
+            this.lblTimeTran.Location = new System.Drawing.Point(541, 38);
+            this.lblTimeTran.Name = "lblTimeTran";
+            this.lblTimeTran.Size = new System.Drawing.Size(55, 13);
+            this.lblTimeTran.TabIndex = 15;
+            this.lblTimeTran.Text = "Train Until";
+            // 
+            // _dtpTrainUntil
+            // 
+            this._dtpTrainUntil.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this._dtpTrainUntil.Location = new System.Drawing.Point(285, 32);
+            this._dtpTrainUntil.Name = "_dtpTrainUntil";
+            this._dtpTrainUntil.Size = new System.Drawing.Size(250, 20);
+            this._dtpTrainUntil.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(282, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Train Until";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Train From";
+            // 
+            // _dtpTrainFrom
+            // 
+            this._dtpTrainFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this._dtpTrainFrom.Location = new System.Drawing.Point(6, 32);
+            this._dtpTrainFrom.Name = "_dtpTrainFrom";
+            this._dtpTrainFrom.Size = new System.Drawing.Size(250, 20);
+            this._dtpTrainFrom.TabIndex = 11;
+            // 
+            // _btnExport
+            // 
+            this._btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._btnExport.Location = new System.Drawing.Point(682, 308);
+            this._btnExport.Name = "_btnExport";
+            this._btnExport.Size = new System.Drawing.Size(75, 23);
+            this._btnExport.TabIndex = 3;
+            this._btnExport.Text = "Save";
+            this._btnExport.UseVisualStyleBackColor = true;
+            this._btnExport.Click += new System.EventHandler(this.BtnExportClick);
+            // 
+            // _btnStop
+            // 
+            this._btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._btnStop.Location = new System.Drawing.Point(601, 308);
+            this._btnStop.Name = "_btnStop";
+            this._btnStop.Size = new System.Drawing.Size(75, 23);
+            this._btnStop.TabIndex = 2;
+            this._btnStop.Text = "Stop";
+            this._btnStop.UseVisualStyleBackColor = true;
+            this._btnStop.Click += new System.EventHandler(this.BtnStopClick);
+            // 
+            // _btnStartTraining
+            // 
+            this._btnStartTraining.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._btnStartTraining.Location = new System.Drawing.Point(520, 308);
+            this._btnStartTraining.Name = "_btnStartTraining";
+            this._btnStartTraining.Size = new System.Drawing.Size(75, 23);
+            this._btnStartTraining.TabIndex = 1;
+            this._btnStartTraining.Text = "Start";
+            this._btnStartTraining.UseVisualStyleBackColor = true;
+            this._btnStartTraining.Click += new System.EventHandler(this.BtnStartTrainingClick);
+            // 
+            // _dgvTrainingResults
+            // 
+            this._dgvTrainingResults.AllowUserToAddRows = false;
+            this._dgvTrainingResults.AllowUserToDeleteRows = false;
+            this._dgvTrainingResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._dgvTrainingResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dgvTrainingResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Epoch,
+            this.Error});
+            this._dgvTrainingResults.Location = new System.Drawing.Point(8, 67);
+            this._dgvTrainingResults.Name = "_dgvTrainingResults";
+            this._dgvTrainingResults.ReadOnly = true;
+            this._dgvTrainingResults.RowHeadersWidth = 15;
+            this._dgvTrainingResults.Size = new System.Drawing.Size(752, 240);
+            this._dgvTrainingResults.TabIndex = 0;
+            // 
+            // Epoch
+            // 
+            this.Epoch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Epoch.HeaderText = "Epoch";
+            this.Epoch.Name = "Epoch";
+            this.Epoch.ReadOnly = true;
+            // 
+            // Error
+            // 
+            this.Error.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Error.HeaderText = "Error";
+            this.Error.Name = "Error";
+            this.Error.ReadOnly = true;
             // 
             // tabPage1
             // 
@@ -284,142 +421,6 @@ namespace FinancialMarketPredictor
             this.ErrorDifference.HeaderText = "RMS Error";
             this.ErrorDifference.Name = "ErrorDifference";
             this.ErrorDifference.ReadOnly = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this._gbTrain);
-            this.tabPage2.Controls.Add(this._btnExport);
-            this.tabPage2.Controls.Add(this._btnStop);
-            this.tabPage2.Controls.Add(this._btnStartTraining);
-            this.tabPage2.Controls.Add(this._dgvTrainingResults);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(767, 332);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Train";
-            // 
-            // _gbTrain
-            // 
-            this._gbTrain.Controls.Add(this.lblTimeTran);
-            this._gbTrain.Controls.Add(this._dtpTrainUntil);
-            this._gbTrain.Controls.Add(this.label4);
-            this._gbTrain.Controls.Add(this.label3);
-            this._gbTrain.Controls.Add(this._dtpTrainFrom);
-            this._gbTrain.Location = new System.Drawing.Point(9, 1);
-            this._gbTrain.Name = "_gbTrain";
-            this._gbTrain.Size = new System.Drawing.Size(750, 60);
-            this._gbTrain.TabIndex = 12;
-            this._gbTrain.TabStop = false;
-            // 
-            // lblTimeTran
-            // 
-            this.lblTimeTran.AutoSize = true;
-            this.lblTimeTran.Location = new System.Drawing.Point(541, 38);
-            this.lblTimeTran.Name = "lblTimeTran";
-            this.lblTimeTran.Size = new System.Drawing.Size(55, 13);
-            this.lblTimeTran.TabIndex = 15;
-            this.lblTimeTran.Text = "Train Until";
-            // 
-            // _dtpTrainUntil
-            // 
-            this._dtpTrainUntil.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this._dtpTrainUntil.Location = new System.Drawing.Point(285, 32);
-            this._dtpTrainUntil.Name = "_dtpTrainUntil";
-            this._dtpTrainUntil.Size = new System.Drawing.Size(250, 20);
-            this._dtpTrainUntil.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Train Until";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Train From";
-            // 
-            // _dtpTrainFrom
-            // 
-            this._dtpTrainFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this._dtpTrainFrom.Location = new System.Drawing.Point(6, 32);
-            this._dtpTrainFrom.Name = "_dtpTrainFrom";
-            this._dtpTrainFrom.Size = new System.Drawing.Size(250, 20);
-            this._dtpTrainFrom.TabIndex = 11;
-            // 
-            // _btnExport
-            // 
-            this._btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnExport.Location = new System.Drawing.Point(682, 308);
-            this._btnExport.Name = "_btnExport";
-            this._btnExport.Size = new System.Drawing.Size(75, 23);
-            this._btnExport.TabIndex = 3;
-            this._btnExport.Text = "Save";
-            this._btnExport.UseVisualStyleBackColor = true;
-            this._btnExport.Click += new System.EventHandler(this.BtnExportClick);
-            // 
-            // _btnStop
-            // 
-            this._btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnStop.Location = new System.Drawing.Point(601, 308);
-            this._btnStop.Name = "_btnStop";
-            this._btnStop.Size = new System.Drawing.Size(75, 23);
-            this._btnStop.TabIndex = 2;
-            this._btnStop.Text = "Stop";
-            this._btnStop.UseVisualStyleBackColor = true;
-            this._btnStop.Click += new System.EventHandler(this.BtnStopClick);
-            // 
-            // _btnStartTraining
-            // 
-            this._btnStartTraining.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnStartTraining.Location = new System.Drawing.Point(520, 308);
-            this._btnStartTraining.Name = "_btnStartTraining";
-            this._btnStartTraining.Size = new System.Drawing.Size(75, 23);
-            this._btnStartTraining.TabIndex = 1;
-            this._btnStartTraining.Text = "Start";
-            this._btnStartTraining.UseVisualStyleBackColor = true;
-            this._btnStartTraining.Click += new System.EventHandler(this.BtnStartTrainingClick);
-            // 
-            // _dgvTrainingResults
-            // 
-            this._dgvTrainingResults.AllowUserToAddRows = false;
-            this._dgvTrainingResults.AllowUserToDeleteRows = false;
-            this._dgvTrainingResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._dgvTrainingResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._dgvTrainingResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Epoch,
-            this.Error});
-            this._dgvTrainingResults.Location = new System.Drawing.Point(8, 67);
-            this._dgvTrainingResults.Name = "_dgvTrainingResults";
-            this._dgvTrainingResults.ReadOnly = true;
-            this._dgvTrainingResults.RowHeadersWidth = 15;
-            this._dgvTrainingResults.Size = new System.Drawing.Size(752, 240);
-            this._dgvTrainingResults.TabIndex = 0;
-            // 
-            // Epoch
-            // 
-            this.Epoch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Epoch.HeaderText = "Epoch";
-            this.Epoch.Name = "Epoch";
-            this.Epoch.ReadOnly = true;
-            // 
-            // Error
-            // 
-            this.Error.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Error.HeaderText = "Error";
-            this.Error.Name = "Error";
-            this.Error.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -606,6 +607,15 @@ namespace FinancialMarketPredictor
             this.label11.TabIndex = 10;
             this.label11.Text = "Output Count";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(14, 1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(214, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Path to Dow indexes (double click to select)";
+            // 
             // WinFinancialMarketPredictor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,6 +632,7 @@ namespace FinancialMarketPredictor
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._txtXAUUSD);
             this.Controls.Add(this.textBox2);
@@ -640,14 +651,14 @@ namespace FinancialMarketPredictor
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WinFinancialMarketPredictorFormClosing);
             this.Load += new System.EventHandler(this.WinFinancialMarketPredictorLoad);
             this._tbMain.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this._gbPredict.ResumeLayout(false);
-            this._gbPredict.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._dgvPredictionResults)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this._gbTrain.ResumeLayout(false);
             this._gbTrain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dgvTrainingResults)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this._gbPredict.ResumeLayout(false);
+            this._gbPredict.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dgvPredictionResults)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._nudHiddenUnits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._nudHiddenLayers)).EndInit();
@@ -717,6 +728,7 @@ namespace FinancialMarketPredictor
         private DataGridViewTextBoxColumn Epoch;
         private DataGridViewTextBoxColumn Error;
         private Label lblTimeTran;
+        private Label label12;
     }
 }
 

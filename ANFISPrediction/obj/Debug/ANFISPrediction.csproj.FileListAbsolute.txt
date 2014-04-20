@@ -1,0 +1,10 @@
+F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\bin\Debug\ANFISPrediction.dll
+F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\bin\Debug\ANFISPrediction.pdb
+F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\obj\Debug\ANFISPrediction.csprojResolveAssemblyReference.cache
+F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\obj\Debug\ANFISPrediction.dll
+F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\obj\Debug\ANFISPrediction.pdb
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\bin\Debug\ANFISPrediction.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\bin\Debug\ANFISPrediction.pdb
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\obj\Debug\ANFISPrediction.csprojResolveAssemblyReference.cache
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\obj\Debug\ANFISPrediction.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\obj\Debug\ANFISPrediction.pdb

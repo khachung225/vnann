@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using ANFISPrediction;
+using BaseEntity.Entity;
 using FinancialMarketPredictor.Entities;
 using FinancialMarketPredictor.Properties;
 using FinancialMarketPredictor.Utilities;

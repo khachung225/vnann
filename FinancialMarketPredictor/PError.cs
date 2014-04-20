@@ -65,14 +65,13 @@ namespace FinancialMarketPredictor
             IPointListEdit list21 = curve2_1.Points as IPointListEdit;
            
             list21.Clear();
-
             DoThi_Error.AxisChange();
             DoThi_Error.Invalidate();
             int i = 0;
             foreach (var item in results)
             {
                 
-                list21.Add(item.index, item.value);
+                list21.Add(i, item.value);
                 
                 // đoạn chương trình thực hiện vẽ đồ thị
                 Scale xScale = DoThi_Error.GraphPane.XAxis.Scale;

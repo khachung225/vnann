@@ -1,13 +1,11 @@
 ﻿// ciumac.sergiu@gmail.com
 //#define LOG_DATASET
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-//using Encog.Neural.Activation;
+using BaseEntity.Entity;
 using Encog.Engine.Network.Activation;
-using Encog.ML.Data;
 using Encog.Neural.Data.Basic;
 using Encog.Neural.Networks;
 using Encog.Neural.Networks.Layers;
@@ -455,11 +453,11 @@ namespace FinancialMarketPredictor
                    //     AbortTraining();
                     listErr.Add(new MyError{index = epoch,value = error});
 
-                    //if (epoch > 3999)
-                    //{
-                    //    istoitu = false;
-                    //    break;
-                    //}
+                    if (epoch > 8000)
+                    {
+                        istoitu = false;
+                        break;
+                    }
                     epoch++;
                 } while (error > MAX_ERROR);
             }

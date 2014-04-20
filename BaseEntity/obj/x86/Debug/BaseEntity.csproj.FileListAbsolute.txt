@@ -1,0 +1,6 @@
+F:\Cao hoc\Luan van\ProjectANN\vnann\BaseEntity\bin\x86\Debug\BaseEntity.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\BaseEntity\bin\x86\Debug\BaseEntity.pdb
+F:\Cao hoc\Luan van\ProjectANN\vnann\BaseEntity\bin\x86\Debug\fastjson.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\BaseEntity\obj\x86\Debug\BaseEntity.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\BaseEntity\obj\x86\Debug\BaseEntity.pdb
+F:\Cao hoc\Luan van\ProjectANN\vnann\BaseEntity\obj\x86\Debug\BaseEntity.csprojResolveAssemblyReference.cache

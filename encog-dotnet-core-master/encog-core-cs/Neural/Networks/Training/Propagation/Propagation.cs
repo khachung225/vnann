@@ -207,7 +207,7 @@ namespace Encog.Neural.Networks.Training.Propagation
                 }
 
                 //dot bien trong so.
-               // SupperviserWigth();
+                SupperviserWigth();
 
                 foreach (GradientWorker worker in _workers)
                 {

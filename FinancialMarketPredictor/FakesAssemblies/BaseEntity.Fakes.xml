@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BaseEntity.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:BaseEntity.Entity.Fakes.ShimCommodityResults">
+            <summary>Shim type of BaseEntity.Entity.CommodityResults</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimCommodityResults.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimCommodityResults.#ctor(BaseEntity.Entity.CommodityResults)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimCommodityResults.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimCommodityResults.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.ActualCloseGet">
+            <summary>Sets the shim of CommodityResults.get_ActualClose()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.ActualCloseSetDouble">
+            <summary>Sets the shim of CommodityResults.set_ActualClose(Double value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.Constructor">
+            <summary>Sets the shim of CommodityResults.CommodityResults()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.DateGet">
+            <summary>Sets the shim of CommodityResults.get_Date()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.DateSetDateTime">
+            <summary>Sets the shim of CommodityResults.set_Date(DateTime value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.ErrorGet">
+            <summary>Sets the shim of CommodityResults.get_Error()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.ErrorSetDouble">
+            <summary>Sets the shim of CommodityResults.set_Error(Double value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.PredictedCloseGet">
+            <summary>Sets the shim of CommodityResults.get_PredictedClose()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.PredictedCloseSetDouble">
+            <summary>Sets the shim of CommodityResults.set_PredictedClose(Double value)</summary>
+        </member>
+        <member name="T:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.ActualCloseGet">
+            <summary>Sets the shim of CommodityResults.get_ActualClose()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.ActualCloseSetDouble">
+            <summary>Sets the shim of CommodityResults.set_ActualClose(Double value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.DateGet">
+            <summary>Sets the shim of CommodityResults.get_Date()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.DateSetDateTime">
+            <summary>Sets the shim of CommodityResults.set_Date(DateTime value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.ErrorGet">
+            <summary>Sets the shim of CommodityResults.get_Error()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.ErrorSetDouble">
+            <summary>Sets the shim of CommodityResults.set_Error(Double value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.PredictedCloseGet">
+            <summary>Sets the shim of CommodityResults.get_PredictedClose()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimCommodityResults.AllInstances.PredictedCloseSetDouble">
+            <summary>Sets the shim of CommodityResults.set_PredictedClose(Double value)</summary>
+        </member>
+        <member name="T:BaseEntity.Entity.Fakes.ShimResultRunANN">
+            <summary>Shim type of BaseEntity.Entity.ResultRunANN</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimResultRunANN.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimResultRunANN.#ctor(BaseEntity.Entity.ResultRunANN)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimResultRunANN.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.ShimResultRunANN.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.Constructor">
+            <summary>Sets the shim of ResultRunANN.ResultRunANN()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.CounterGet">
+            <summary>Sets the shim of ResultRunANN.get_Counter()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.CounterSetInt32">
+            <summary>Sets the shim of ResultRunANN.set_Counter(Int32 value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.IshoituGet">
+            <summary>Sets the shim of ResultRunANN.get_Ishoitu()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.IshoituSetBoolean">
+            <summary>Sets the shim of ResultRunANN.set_Ishoitu(Boolean value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.ListResultGet">
+            <summary>Sets the shim of ResultRunANN.get_ListResult()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.ListResultSetListOfCommodityResults">
+            <summary>Sets the shim of ResultRunANN.set_ListResult(List`1&lt;CommodityResults&gt; value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.TotalMinuteGet">
+            <summary>Sets the shim of ResultRunANN.get_TotalMinute()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.TotalMinuteSetDouble">
+            <summary>Sets the shim of ResultRunANN.set_TotalMinute(Double value)</summary>
+        </member>
+        <member name="T:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.CounterGet">
+            <summary>Sets the shim of ResultRunANN.get_Counter()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.CounterSetInt32">
+            <summary>Sets the shim of ResultRunANN.set_Counter(Int32 value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.IshoituGet">
+            <summary>Sets the shim of ResultRunANN.get_Ishoitu()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.IshoituSetBoolean">
+            <summary>Sets the shim of ResultRunANN.set_Ishoitu(Boolean value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.ListResultGet">
+            <summary>Sets the shim of ResultRunANN.get_ListResult()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.ListResultSetListOfCommodityResults">
+            <summary>Sets the shim of ResultRunANN.set_ListResult(List`1&lt;CommodityResults&gt; value)</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.TotalMinuteGet">
+            <summary>Sets the shim of ResultRunANN.get_TotalMinute()</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.ShimResultRunANN.AllInstances.TotalMinuteSetDouble">
+            <summary>Sets the shim of ResultRunANN.set_TotalMinute(Double value)</summary>
+        </member>
+        <member name="T:BaseEntity.Entity.Fakes.StubCommodityResults">
+            <summary>Stub type of BaseEntity.Entity.CommodityResults</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.StubCommodityResults.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.StubCommodityResults.InitializeStub">
+            <summary>Initializes a new instance of type StubCommodityResults</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.StubCommodityResults.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.StubCommodityResults.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.StubCommodityResults.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:BaseEntity.Entity.Fakes.StubResultRunANN">
+            <summary>Stub type of BaseEntity.Entity.ResultRunANN</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.StubResultRunANN.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:BaseEntity.Entity.Fakes.StubResultRunANN.InitializeStub">
+            <summary>Initializes a new instance of type StubResultRunANN</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.StubResultRunANN.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.StubResultRunANN.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:BaseEntity.Entity.Fakes.StubResultRunANN.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:BaseEntity.Utils.Fakes.ShimDirectionIO">
+            <summary>Shim type of BaseEntity.Utils.DirectionIO</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimDirectionIO.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimDirectionIO.#ctor(BaseEntity.Utils.DirectionIO)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimDirectionIO.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimDirectionIO.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.Constructor">
+            <summary>Sets the shim of DirectionIO.DirectionIO()</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.CreateNewFolderString">
+            <summary>Sets the shim of DirectionIO.CreateNewFolder(String folderName)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.GetPath">
+            <summary>Sets the shim of DirectionIO.GetPath()</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.IsExistFileString">
+            <summary>Sets the shim of DirectionIO.IsExistFile(String filePath)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.IsExistNewFolderString">
+            <summary>Sets the shim of DirectionIO.IsExistNewFolder(String folderName)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.ReadAllTextString">
+            <summary>Sets the shim of DirectionIO.ReadAllText(String filePath)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.RemoveFileString">
+            <summary>Sets the shim of DirectionIO.RemoveFile(String s)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.StaticConstructor">
+            <summary>Sets the shim of DirectionIO.DirectionIO()</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimDirectionIO.WriteAllTextStringString">
+            <summary>Sets the shim of DirectionIO.WriteAllText(String filePath, String value)</summary>
+        </member>
+        <member name="T:BaseEntity.Utils.Fakes.ShimDirectionIO.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:BaseEntity.Utils.Fakes.ShimJsonUtils">
+            <summary>Shim type of BaseEntity.Utils.JsonUtils</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimJsonUtils.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimJsonUtils.#ctor(BaseEntity.Utils.JsonUtils)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimJsonUtils.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimJsonUtils.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.ShimJsonUtils.DeserializeOf1String``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.String,``0})">
+            <summary>Sets the shim of JsonUtils.Deserialize(String stringJson)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimJsonUtils.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimJsonUtils.Constructor">
+            <summary>Sets the shim of JsonUtils.JsonUtils()</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimJsonUtils.DeserializeString">
+            <summary>Sets the shim of JsonUtils.Deserialize(String stringJson)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimJsonUtils.SerializeObject">
+            <summary>Sets the shim of JsonUtils.Serialize(Object obj)</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.ShimJsonUtils.SetParams">
+            <summary>Sets the shim of JsonUtils.SetParams()</summary>
+        </member>
+        <member name="T:BaseEntity.Utils.Fakes.ShimJsonUtils.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:BaseEntity.Utils.Fakes.StubDirectionIO">
+            <summary>Stub type of BaseEntity.Utils.DirectionIO</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.StubDirectionIO.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.StubDirectionIO.InitializeStub">
+            <summary>Initializes a new instance of type StubDirectionIO</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.StubDirectionIO.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.StubDirectionIO.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.StubDirectionIO.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:BaseEntity.Utils.Fakes.StubJsonUtils">
+            <summary>Stub type of BaseEntity.Utils.JsonUtils</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.StubJsonUtils.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:BaseEntity.Utils.Fakes.StubJsonUtils.InitializeStub">
+            <summary>Initializes a new instance of type StubJsonUtils</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.StubJsonUtils.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.StubJsonUtils.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:BaseEntity.Utils.Fakes.StubJsonUtils.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

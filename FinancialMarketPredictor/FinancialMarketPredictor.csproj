@@ -76,14 +76,15 @@
       <HintPath>C:\Users\Admin\Desktop\F\Cloo.dll</HintPath>
     </Reference>
     <Reference Include="ExcelLibrary">
-      <HintPath>C:\Users\ADMIN\Desktop\ExcelLibrary_20110730\ExcelLibrary.dll</HintPath>
+      <HintPath>.\ExcelLibrary.dll</HintPath>
     </Reference>
     <Reference Include="fastjson">
-      <HintPath>..\packages\fastJSON.2.1.0.0\lib\net40\fastjson.dll</HintPath>
+      <HintPath>.\fastjson.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>C:\Users\Admin\Desktop\F\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -101,7 +102,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="ZedGraph">
-      <HintPath>..\..\..\ANFIS\ANFIS\ANFIS\bin\Debug\ZedGraph.dll</HintPath>
+      <HintPath>.\ZedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -113,12 +114,10 @@
     </Compile>
     <Compile Include="AppGlobol.cs" />
     <Compile Include="Entities\CommodityIndexes.cs" />
-    <Compile Include="Entities\CommodityResults.cs" />
     <Compile Include="Entities\PData.cs" />
     <Compile Include="Entities\FinancialIndexes.cs" />
     <Compile Include="Entities\FinancialPredictorManager.cs" />
     <Compile Include="Entities\PredictionResults.cs" />
-    <Compile Include="Entities\ResultRunANN.cs" />
     <Compile Include="PError.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,10 +127,7 @@
     <Compile Include="PredictIndicators.cs" />
     <Compile Include="Utilities\CSVReader.cs" />
     <Compile Include="Utilities\CSVWriter.cs" />
-    <Compile Include="Utilities\DirectionIO.cs" />
     <Compile Include="Utilities\ErrorCalculation.cs" />
-    <Compile Include="Utilities\ExcelWriter.cs" />
-    <Compile Include="Utilities\JsonUtils.cs" />
     <Compile Include="WinFinancialMarketPredictor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +156,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <Fakes Include="Fakes\BaseEntity.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -198,9 +195,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ANFIS\ANFIS\ANFISPrediction\ANFISPrediction.csproj">
+    <ProjectReference Include="..\ANFISPrediction\ANFISPrediction.csproj">
       <Project>{ad244ac8-8cd2-4dbb-8922-05420000c53a}</Project>
       <Name>ANFISPrediction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BaseEntity\BaseEntity.csproj">
+      <Project>{d9aa6d42-cb60-4b1b-96ec-bc842a37cd65}</Project>
+      <Name>BaseEntity</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
     <ProjectReference Include="..\encog-dotnet-core-master\encog-core-cs\encog-core-cs.csproj">
       <Project>{ac6fadf9-0904-4ebd-b22c-1c787c7e7a95}</Project>
