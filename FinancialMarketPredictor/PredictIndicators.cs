@@ -1,8 +1,9 @@
 ﻿// ciumac.sergiu@gmail.com
-//#define LOG_DATASET
+#define LOG_DATASET
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Threading;
 using BaseEntity.Entity;
 using Encog.Engine.Network.Activation;
@@ -453,7 +454,7 @@ namespace FinancialMarketPredictor
                    //     AbortTraining();
                     listErr.Add(new MyError{index = epoch,value = error});
 
-                    if (epoch > 8000)
+                    if (epoch > 10000)
                     {
                         istoitu = false;
                         break;

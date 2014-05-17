@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using AppTestTool.Data;
@@ -214,7 +215,7 @@ namespace AppTestTool
                  Excel.Worksheet xlWorkSheet1;
                  xlWorkSheet1 = (Excel.Worksheet) xlWorkBook.Worksheets.get_Item(1);
                  xlWorkSheet1.Name = "Summary";
-                 ReleaseObject(xlWorkSheet1);
+                
                  xlWorkBook.SaveAs(DirectionIO.GetPath() + "\\KetQua1.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue,
                                    misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue,
                                    misValue, misValue, misValue, misValue);
@@ -243,6 +244,10 @@ namespace AppTestTool
                      }
                      
                  }
+
+                 UpdateSummerySheet(xlWorkSheet1, listData);
+
+                 ReleaseObject(xlWorkSheet1);
                  xlWorkBook.Save();
                  xlWorkBook.Close(true, misValue, misValue);
                 
@@ -262,7 +267,67 @@ namespace AppTestTool
              MessageBox.Show("Xuat thang cong");
 
          }
-         private void ReleaseObject(object obj)
+
+        private void UpdateSummerySheet(Excel.Worksheet xlWorkSheet1, List<TaskManager> listData)
+        {
+            //infomation.
+            xlWorkSheet1.Cells[1, 1] = "Thực hiện trên bộ dữ liệu DataTranning. Dùng mạng đó để dự đoán từ ngày 01/11/2013 tới ngày 16/11/2013.";
+            xlWorkSheet1.Cells[2, 14] = "Thông tin mạng";
+            xlWorkSheet1.Cells[3, 14] = "Số loại đầu vào"; xlWorkSheet1.Cells[3, 16] = "11";
+            xlWorkSheet1.Cells[4, 14] = "Đầu vào"; xlWorkSheet1.Cells[4, 16] = "55";
+            xlWorkSheet1.Cells[5, 14] = "Đầu ra"; xlWorkSheet1.Cells[5, 16] = "1";
+            xlWorkSheet1.Cells[6, 14] = "Số lớp ẩn"; xlWorkSheet1.Cells[6, 16] = "3";
+            xlWorkSheet1.Cells[7, 14] = "Số noron trong một lớp ẩn"; xlWorkSheet1.Cells[7, 16] = "14";
+            int colum = 3;
+            if (listData.Count > 0)
+            {
+                foreach (var taskManager in listData)
+                {
+                    var result = GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
+                    if (result != null)
+                    {
+
+                        if (colum == 3)
+                        {
+                            xlWorkSheet1.Cells[9, colum - 2] = "Ngày";
+                            xlWorkSheet1.Cells[9, colum - 1] = "Giá trị thực";
+
+
+                            xlWorkSheet1.Cells[37, colum - 1] = "Thời gian học (phút):";
+                            xlWorkSheet1.Cells[38, colum - 1] = "Số lần lặp:";
+                            xlWorkSheet1.Cells[39, colum - 1] = "Mạng hội tụ";
+                        }
+                        xlWorkSheet1.Cells[9, colum] = taskManager.TaskName;
+                        xlWorkSheet1.Cells[36, colum] = taskManager.TaskName;
+                        int k = 9;
+                        foreach (var results in result.ListResult)
+                        {
+                            k++;
+                            if (colum == 3)
+                            {
+                                //thong tin ngày thang
+                                xlWorkSheet1.Cells[k, colum - 2] = results.Date;
+                                // thong tin gia trị thực
+                                xlWorkSheet1.Cells[k, colum - 1] = results.ActualClose;
+                            }
+                            xlWorkSheet1.Cells[k, colum] = "=VLOOKUP(A" + k.ToString(CultureInfo.InvariantCulture) + "," + taskManager.TaskName + "!$A$2:$C$11,3,0)";
+                        
+
+                        }
+
+                        xlWorkSheet1.Cells[37, colum] = result.TotalMinute;
+                        xlWorkSheet1.Cells[38, colum] = result.Counter;
+                        xlWorkSheet1.Cells[39, colum] = result.Ishoitu ? 1:0;
+
+
+                        colum++;
+                    }
+
+                }
+            }
+        }
+
+        private void ReleaseObject(object obj)
          {
              try
              {

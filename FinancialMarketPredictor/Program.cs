@@ -34,7 +34,14 @@ namespace FinancialMarketPredictor
                     AppGlobol.FolderPath = folderName[0];
                     AppGlobol.IsAutoRun = true;
                 }
-            }
+               
+            } else
+                {
+                    var systemPArth = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                    AppGlobol.FolderPath = systemPArth.Remove(systemPArth.LastIndexOf("\\", System.StringComparison.Ordinal)) + "/ket qua";
+
+                    AppGlobol.IsAutoRun = true;
+                }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WinFinancialMarketPredictor());

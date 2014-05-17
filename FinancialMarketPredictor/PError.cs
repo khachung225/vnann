@@ -31,7 +31,7 @@ namespace FinancialMarketPredictor
             myPane1.XAxis.Title.Text = "Số lần lặp";
             myPane1.YAxis.Title.Text = "Giá trị lỗi";
             // Định nghĩa list để vẽ đồ thị. Để các bạn hiểu rõ cơ chế làm việc ở đây khai báo 2 list điểm <=> 2 đường đồ thị
-            RollingPointPairList list6_1 = new RollingPointPairList(1000);
+            RollingPointPairList list6_1 = new RollingPointPairList(11000);
            // RollingPointPairList list6_2 = new RollingPointPairList(1000);
             // dòng dưới là định nghĩa curve để vẽ.
             myPane1.AddCurve("Giá trị đo", list6_1, Color.Red, SymbolType.Diamond);

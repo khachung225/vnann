@@ -48,6 +48,7 @@ namespace FinancialMarketPredictor.Utilities
         {
             try
             {
+                //if (string.IsNullOrEmpty(when)) return DateTime.Now;
                 return DateTime.ParseExact(when, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             }
             catch (FormatException)

@@ -55,7 +55,7 @@ namespace FinancialMarketPredictor
         /// <summary>
         /// Predict the percentage movement from a specific date
         /// </summary>
-        private readonly DateTime _predictFrom = CSVReader.ParseDate("2013-11-02");
+        private readonly DateTime _predictFrom =CSVReader.ParseDate("2013-07-01");// CSVReader.ParseDate("2012-09-01");
 
         /// <summary>
         /// Predict the percentage movement to a specific date
@@ -70,7 +70,7 @@ namespace FinancialMarketPredictor
         /// <summary>
         /// Learn until a specific date
         /// </summary>
-        private readonly DateTime _learnTo = CSVReader.ParseDate("2013-11-01"); 
+        private readonly DateTime _learnTo = CSVReader.ParseDate("2013-06-28");  //CSVReader.ParseDate("2012-08-31");
 
         /// <summary>
         /// Maximum date that can be specified for training and predicting, specified in the AppConfig
@@ -206,7 +206,7 @@ namespace FinancialMarketPredictor
 
                  var ketqua = JsonUtils.Serialize(result);
                  DirectionIO.WriteAllText(AppGlobol.FolderPath + "/Result.tsk", ketqua);
-                 Application.Exit();
+                 //Application.Exit();
              }
         }
 
