@@ -106,18 +106,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ANFISWinFinancialMarketPredictor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ANFISWinFinancialMarketPredictor.Designer.cs">
-      <DependentUpon>ANFISWinFinancialMarketPredictor.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppGlobol.cs" />
-    <Compile Include="Entities\CommodityIndexes.cs" />
-    <Compile Include="Entities\PData.cs" />
-    <Compile Include="Entities\FinancialIndexes.cs" />
-    <Compile Include="Entities\FinancialPredictorManager.cs" />
-    <Compile Include="Entities\PredictionResults.cs" />
     <Compile Include="PError.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,8 +114,6 @@
       <DependentUpon>PError.cs</DependentUpon>
     </Compile>
     <Compile Include="PredictIndicators.cs" />
-    <Compile Include="Utilities\CSVReader.cs" />
-    <Compile Include="Utilities\CSVWriter.cs" />
     <Compile Include="Utilities\ErrorCalculation.cs" />
     <Compile Include="WinFinancialMarketPredictor.cs">
       <SubType>Form</SubType>
@@ -136,9 +123,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ANFISWinFinancialMarketPredictor.resx">
-      <DependentUpon>ANFISWinFinancialMarketPredictor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PError.resx">
       <DependentUpon>PError.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,7 +140,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <Fakes Include="Fakes\BaseEntity.fakes" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -220,6 +203,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

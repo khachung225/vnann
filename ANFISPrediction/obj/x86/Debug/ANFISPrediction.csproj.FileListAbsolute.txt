@@ -3,3 +3,8 @@ F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\bin\x86\Debug\ANFISP
 F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\obj\x86\Debug\ANFISPrediction.csprojResolveAssemblyReference.cache
 F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\obj\x86\Debug\ANFISPrediction.dll
 F:\Cao hoc\Luan van\source code\ANFIS\ANFIS\ANFISPrediction\obj\x86\Debug\ANFISPrediction.pdb
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\bin\x86\Debug\ANFISPrediction.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\bin\x86\Debug\ANFISPrediction.pdb
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\obj\x86\Debug\ANFISPrediction.csprojResolveAssemblyReference.cache
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\obj\x86\Debug\ANFISPrediction.dll
+F:\Cao hoc\Luan van\ProjectANN\vnann\ANFISPrediction\obj\x86\Debug\ANFISPrediction.pdb

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BaseEntity.Utils;
 using FinancialMarketPredictor.Utilities;
 using ZedGraph;
 
@@ -49,6 +50,8 @@ namespace FinancialMarketPredictor
             //myPane1.XAxis.Scale.MajorUnit = DateUnit.Day;         // set the maximum x unit to time/minutes
             //myPane1.XAxis.Scale.Format = "MM/dd/yyyy";
             // Gọi hàm xác định cỡ trục
+            myPane1.YAxis.Scale.Min = 0;
+            myPane1.YAxis.Scale.Max = 0.002;
             myPane1.AxisChange();
 
         }

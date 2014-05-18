@@ -19,6 +19,7 @@ namespace AppTestTool
     {
         private string _taskManager = "/TaskManager.tsk";
         private string _fileResult = "/Result.tsk";
+        private TaskTimer _taskTimer = new TaskTimer();
         public FrmTestTool()
         {
             InitializeComponent();
@@ -37,27 +38,11 @@ namespace AppTestTool
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            var path = DirectionIO.GetPath();
+             
             int count;
             if (!Int32.TryParse(textBox1.Text, out count))
                 count = 0;
-            var listTask = new List<TaskManager>();
-            for (int i = 0; i < count; i++)
-            {
-
-                var task = new TaskManager
-                    {
-                        TaskCouter = i + 1,
-                        TaskName = string.Format("ANN{0}", i + 1),
-                        Status = 1,
-                    };
-                task.PathFolder = path + "\\" + task.TaskName;
-                DirectionIO.CreateNewFolder(task.PathFolder);
-                listTask.Add(task);
-            }
-
-            var fileconten = JsonUtils.Serialize(listTask);
-            DirectionIO.WriteAllText(DirectionIO.GetPath() + _taskManager, fileconten);
+             _taskTimer.CreateTask(count);
 
             progressBar1.Minimum = 0;
             progressBar1.Maximum = count;
@@ -90,7 +75,7 @@ namespace AppTestTool
                 }
 
                 var isnext = false;
-                var inprocess = GetTaskNameProcessing();
+                var inprocess = _taskTimer.GetTaskNameProcessing();
                 if (inprocess == null)
                 {
                     isnext = true;
@@ -100,16 +85,16 @@ namespace AppTestTool
                     if (DirectionIO.IsExistFile(inprocess.PathFolder + _fileResult))
                     {
                         inprocess.Status = 3;
-                        UpdateStausTask(inprocess);
+                        _taskTimer.UpdateStausTask(inprocess);
                         isnext = true;
                     }
                 }
                 if (isnext)
                 {
-                    var nexprocess = GetTaskNameProcessNext();
+                    var nexprocess = _taskTimer.GetTaskNameProcessNext();
                     if (nexprocess == null) break;
                     nexprocess.Status = 2;
-                    UpdateStausTask(nexprocess);
+                    _taskTimer.UpdateStausTask(nexprocess);
                     DirectionIO.RemoveFile(nexprocess.PathFolder + _fileResult);
                     CallAppRunningPath(nexprocess.PathFolder);
                     worker.ReportProgress(nexprocess.TaskCouter, nexprocess);
@@ -139,66 +124,7 @@ namespace AppTestTool
             }
         }
 
-        private void UpdateStausTask(TaskManager taskManagerModif)
-        {
-            var dta = DirectionIO.ReadAllText(DirectionIO.GetPath() + _taskManager);
-            var listData = JsonUtils.Deserialize<List<TaskManager>>(dta);
-            foreach (var taskManager in listData)
-            {
-                if (taskManager.TaskCouter == taskManagerModif.TaskCouter)
-                {
-                    taskManager.Status = taskManagerModif.Status;
-                    break;
-                }
-               
-            }
-            var fileconten = JsonUtils.Serialize(listData);
-            DirectionIO.WriteAllText(DirectionIO.GetPath() + _taskManager, fileconten);
-        }
-
-        #region TaskName process
-        private TaskManager GetTaskNameProcessing()
-        {
-            var dta = DirectionIO.ReadAllText(DirectionIO.GetPath() + _taskManager);
-            var listData = JsonUtils.Deserialize<List<TaskManager>>(dta);
-            foreach (var taskManager in listData)
-            {
-                if (taskManager.Status == 2)
-                    return taskManager;
-            }
-            return null;
-        }
-        private TaskManager GetTaskNameProcessNext()
-        {
-            var dta = DirectionIO.ReadAllText(DirectionIO.GetPath() + _taskManager);
-            var listData = JsonUtils.Deserialize<List<TaskManager>>(dta);
-            foreach (var taskManager in listData)
-            {
-                if (taskManager.Status == 3) continue;
-                if (taskManager.Status == 1)
-                    return taskManager;
-            }
-            return null;
-        }
-        #endregion
-
-        #region Excel call
-        private ResultRunANN GetResultRunANN(string pathfile)
-        {
-            if (DirectionIO.IsExistFile(pathfile))
-            {
-                var stringfile = DirectionIO.ReadAllText(pathfile);
-                if (stringfile != null)
-                {
-                    var result = JsonUtils.Deserialize<ResultRunANN>(stringfile);
-                    return result;
-                }
-            }
-            return null;
-        }
-        #endregion
-
-
+      
          private void btnExport_Click(object sender, EventArgs e)
          {
              Excel.Application xlApp;
@@ -228,7 +154,7 @@ namespace AppTestTool
                  progressBar1.Maximum = listData.Count;
                  foreach (var taskManager in listData)
                  {
-                     var result = GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
+                     var result = _taskTimer.GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
                      if (result != null)
                      {
                          var worksheet = (Excel.Worksheet) xlWorkBook.Worksheets.Add();
@@ -283,7 +209,7 @@ namespace AppTestTool
             {
                 foreach (var taskManager in listData)
                 {
-                    var result = GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
+                    var result = _taskTimer.GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
                     if (result != null)
                     {
 
@@ -466,7 +392,7 @@ namespace AppTestTool
                 int k = 2;
                 foreach (var taskManager in listData)
                 {
-                    var result = GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
+                    var result = _taskTimer.GetResultRunANN(taskManager.PathFolder + "\\Result.tsk");
                     if (result != null)
                     {
                         xlWorkSheet1.Cells[1, k] = taskManager.TaskName;

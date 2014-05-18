@@ -9,7 +9,7 @@ namespace BaseEntity.Entity
         {
             ListResult= new List<CommodityResults>();
         }
-
+        public DateTime PredicDate { get; set; }
         public double TotalMinute { get; set; }
         public  int Counter { get; set; }
         public  bool Ishoitu { get; set; }

@@ -5,15 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading;
+using BaseEntity.Common;
 using BaseEntity.Entity;
+using BaseEntity.Utils;
 using Encog.Engine.Network.Activation;
 using Encog.Neural.Data.Basic;
 using Encog.Neural.Networks;
 using Encog.Neural.Networks.Layers;
 using Encog.Neural.Networks.Training;
-using FinancialMarketPredictor.Entities;
-using FinancialMarketPredictor.Utilities;
 using Encog.Neural.Networks.Training.Propagation.Resilient;
+using FinancialMarketPredictor.Utilities;
 
 namespace FinancialMarketPredictor
 {
@@ -69,7 +70,7 @@ namespace FinancialMarketPredictor
         /// <remarks>
         /// The total amount of input synapses equals <c>InputTupples * IndexesToConsider</c>
         /// </remarks>
-        private const int INPUT_TUPLES = 1; // ban ghi can du doan.
+        private const int INPUT_TUPLES = 5; // ban ghi can du doan.
 
         /// <summary>
         /// The size of network's output
@@ -330,8 +331,7 @@ namespace FinancialMarketPredictor
             _network.AddLayer(new BasicLayer(new ActivationTANH(), true, OUTPUT_SIZE));                      /*Output of the network*/
             _network.Structure.FinalizeStructure();                                                         /*Finalize network structure*/
             _network.Reset();                                                                               /*Randomize*/
-            _network.Structure.HiddentLayer = hiddenLayers;
-            _network.Structure.HiddentUnit = hiddenUnits;
+            _network.Structure.HiddentLayer = hiddenLayers;_network.Structure.HiddentUnit = hiddenUnits;
         }
 
         /// <summary>

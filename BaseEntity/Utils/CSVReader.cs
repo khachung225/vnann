@@ -1,4 +1,4 @@
-﻿
+
 // ciumac.sergiu@gmail.com
 
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace FinancialMarketPredictor.Utilities
+namespace BaseEntity.Utils
 {
     /// <summary>
     /// CSV Reader class

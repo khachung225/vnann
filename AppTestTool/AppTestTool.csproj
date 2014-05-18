@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\TaskManager.cs" />
+    <Compile Include="PredicDayByDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PredicDayByDay.Designer.cs">
+      <DependentUpon>PredicDayByDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTestTool.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Utils\DirectionIO.cs" />
     <Compile Include="Utils\TaskTimer.cs" />
     <Compile Include="Utils\JsonUtils.cs" />
+    <EmbeddedResource Include="PredicDayByDay.resx">
+      <DependentUpon>PredicDayByDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmTestTool.resx">
       <DependentUpon>FrmTestTool.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,5 +16,6 @@ namespace FinancialMarketPredictor
        public static int Counter { get; set; }
        public static bool Ishoitu { get; set; }
        public static List<CommodityResults> ListResult { get; set; }
+       public static DateTime PredicDate { get; set; }
     }
 }

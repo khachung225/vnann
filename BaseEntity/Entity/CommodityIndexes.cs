@@ -1,8 +1,9 @@
-﻿// ciumac.sergiu@gmail.com
+// ciumac.sergiu@gmail.com
+
 using System;
 using System.Collections.Generic;
 
-namespace FinancialMarketPredictor.Entities
+namespace BaseEntity.Entity
 {
     public enum CommodityIndexe
     {

@@ -33,15 +33,25 @@ namespace FinancialMarketPredictor
                 {
                     AppGlobol.FolderPath = folderName[0];
                     AppGlobol.IsAutoRun = true;
-                }
-               
-            } else
-                {
-                    var systemPArth = System.Reflection.Assembly.GetExecutingAssembly().Location;
-                    AppGlobol.FolderPath = systemPArth.Remove(systemPArth.LastIndexOf("\\", System.StringComparison.Ordinal)) + "/ket qua";
+                    var date = folderName[1];
+                    DateTime outDate;
+                    if (!DateTime.TryParse(date, out outDate))
+                    {
+                        return;
+                    }
+                    AppGlobol.PredicDate = outDate;
 
-                    AppGlobol.IsAutoRun = true;
+
                 }
+
+            }
+            //else
+            //    {
+            //        var systemPArth = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            //        AppGlobol.FolderPath = systemPArth.Remove(systemPArth.LastIndexOf("\\", System.StringComparison.Ordinal)) + "/ket qua";
+
+            //        AppGlobol.IsAutoRun = true;
+            //    }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WinFinancialMarketPredictor());

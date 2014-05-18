@@ -1,9 +1,9 @@
-﻿// ciumac.sergiu@gmail.com
+// ciumac.sergiu@gmail.com
 
 using System.IO;
 using System.Text;
 
-namespace FinancialMarketPredictor.Utilities
+namespace BaseEntity.Utils
 {
     /// <summary>
     /// Class for writing any object values in comma separated file

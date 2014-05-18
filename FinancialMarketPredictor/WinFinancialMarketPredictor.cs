@@ -8,9 +8,7 @@ using System.Timers;
 using System.Windows.Forms;
 using BaseEntity.Entity;
 using BaseEntity.Utils;
-using FinancialMarketPredictor.Entities;
 using FinancialMarketPredictor.Properties;
-using FinancialMarketPredictor.Utilities;
 using System.Configuration;
 using System.Security.Permissions;
 using ZedGraph;
@@ -118,6 +116,13 @@ namespace FinancialMarketPredictor
                 _maxDate = DateTime.Now;                        /*Maximum specified in the csv files*/
                 _minDate = CSVReader.ParseDate("1971-02-05");   /*Minimum specified in the csv files*/
             }
+            //lấy dữ liệu từ vùng nhớ static
+            if (AppGlobol.IsAutoRun)
+            {
+                _predictFrom = _predictTo = AppGlobol.PredicDate;
+                _learnTo = AppGlobol.PredicDate;
+                _learnTo =_learnTo.AddDays(-1);
+            }
 
             /*Set some reasonable default values*/
             _dtpTrainFrom.Value = _learnFrom;
@@ -187,7 +192,7 @@ namespace FinancialMarketPredictor
                      {
                          Invoke(new MethodInvoker(delegate
                              {
-                                 DoThi_GiaiTri.GetImage().Save(AppGlobol.FolderPath + "/ResultGraph.png");
+                                 //DoThi_GiaiTri.GetImage().Save(AppGlobol.FolderPath + "/ResultGraph.png");
                                  AppGlobol.Status++;
                              }));
                          
@@ -206,7 +211,7 @@ namespace FinancialMarketPredictor
 
                  var ketqua = JsonUtils.Serialize(result);
                  DirectionIO.WriteAllText(AppGlobol.FolderPath + "/Result.tsk", ketqua);
-                 //Application.Exit();
+                 Application.Exit();
              }
         }
 

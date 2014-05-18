@@ -1,4 +1,5 @@
-﻿// ciumac.sergiu@gmail.com
+// ciumac.sergiu@gmail.com
+
 using System;
 using Encog.ML.Data;
 

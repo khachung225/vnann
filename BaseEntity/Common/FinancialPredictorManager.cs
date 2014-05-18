@@ -3,9 +3,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using FinancialMarketPredictor.Utilities;
+using BaseEntity.Entity;
+using BaseEntity.Utils;
 
-namespace FinancialMarketPredictor.Entities
+namespace BaseEntity.Common
 {
     /// <summary>
     /// Financial predictor manager
@@ -500,6 +501,27 @@ namespace FinancialMarketPredictor.Entities
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// hàm sử dụng để tìm xem ngày kế tiếp là ngày nào
+        /// sử dụng cho việc tìm ngày dự đoán tiếp theo.
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public DateTime GetNextDate(DateTime dateTime)
+        {
+           
+            var symbolcount = _samples.Count;
+            if (symbolcount == 0) return dateTime;
+            for (int i = 0; i < symbolcount; i++)
+            {
+               if (_samples[i].Date.Date.CompareTo(dateTime.Date) > 0)
+               {
+                   return _samples[i].Date.Date;
+               }
+            }
+            return _samples[symbolcount - 1].Date.Date;
         }
     }
 }

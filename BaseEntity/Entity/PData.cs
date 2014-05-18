@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace FinancialMarketPredictor.Entities
+namespace BaseEntity.Entity
 {
     public class PData : IComparable<PData>
     {
