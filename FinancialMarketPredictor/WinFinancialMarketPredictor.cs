@@ -40,7 +40,7 @@ namespace FinancialMarketPredictor
         /// </summary>
         private string _pathToDow = "DOWI_index_1104.csv";
 
-        private string _pathToCommodity = "KCZ13_718.csv";
+        private string _pathToCommodity = "CTN13_647.csv";
 
         private string _pathToXAUUSD = "XAU-USD.csv";
         private string _pathToNikkie = "NKY_index_1074.csv";
@@ -53,22 +53,22 @@ namespace FinancialMarketPredictor
         /// <summary>
         /// Predict the percentage movement from a specific date
         /// </summary>
-        private readonly DateTime _predictFrom =CSVReader.ParseDate("2013-07-01");// CSVReader.ParseDate("2012-09-01");
+        private readonly DateTime _predictFrom = CSVReader.ParseDate("2013-01-01");// CSVReader.ParseDate("2013-07-01");
 
         /// <summary>
         /// Predict the percentage movement to a specific date
         /// </summary>
-        private readonly DateTime _predictTo = CSVReader.ParseDate("2013-11-16");
+        private readonly DateTime _predictTo = CSVReader.ParseDate("2013-07-30");//CSVReader.ParseDate("2013-11-16");
 
         /// <summary>
         /// Learn from a specific date
         /// </summary>
-        private readonly DateTime _learnFrom = CSVReader.ParseDate("2008-09-12");
+        private readonly DateTime _learnFrom = CSVReader.ParseDate("2008-01-01");
 
         /// <summary>
         /// Learn until a specific date
         /// </summary>
-        private readonly DateTime _learnTo = CSVReader.ParseDate("2013-06-28");  //CSVReader.ParseDate("2012-08-31");
+        private readonly DateTime _learnTo = CSVReader.ParseDate("2012-12-31");  //CSVReader.ParseDate("2012-08-31");
 
         /// <summary>
         /// Maximum date that can be specified for training and predicting, specified in the AppConfig
@@ -198,7 +198,7 @@ namespace FinancialMarketPredictor
                          
                      }
                      Console.WriteLine(" Count:" + AppGlobol.Status.ToString());
-                     System.Threading.Thread.Sleep(1000);
+                     System.Threading.Thread.Sleep(100);
                  }
                  var result = new ResultRunANN
                      {
@@ -206,7 +206,7 @@ namespace FinancialMarketPredictor
                          Ishoitu = AppGlobol.Ishoitu,
                          ListResult = AppGlobol.ListResult,
                          TotalMinute = AppGlobol.TimeSpan.TotalMinutes,
-
+                         InitWeight = AppGlobol.InitWieght
                      };
 
                  var ketqua = JsonUtils.Serialize(result);

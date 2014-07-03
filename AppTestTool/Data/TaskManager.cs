@@ -1,4 +1,6 @@
 ﻿ 
+using System;
+
 namespace AppTestTool.Data
 {
     public class TaskManager
@@ -7,5 +9,6 @@ namespace AppTestTool.Data
         public string TaskName { get; set; }
         public int Status { get; set; }
         public string PathFolder { get; set; }
+        public DateTime Day { get; set; }
     }
 }

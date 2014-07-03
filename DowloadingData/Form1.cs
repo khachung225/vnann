@@ -18,6 +18,21 @@ namespace DowloadingData
 {
     public partial class Form1 : Form
     {
+        /*
+         * - Ký hiệu - Tháng
+         * - F - 1
+         * - G - 2
+         * - H - 3
+         * - J - 4
+         * - K - 5
+         * - M - 6
+         * - N - 7
+         * - Q - 8
+         * - U - 9
+         * - V - 10
+         * - X - 11
+         * - Z - 12
+         */
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +50,7 @@ namespace DowloadingData
         {
             /* IT WORK CORRECTLY IF WE SET url = "http://vn.yahoo.com/?p=us"; BUT NOT OK WITH URL BELOW*/
             //String url = "http://raovat.com/?rv=detail&idrv=527443&idcate=57&tt=vppnhatthanh@yahoo.com.vn";
-
+            //http://www.barchart.com/charts/futures/KCZ11
             /* PLEASE HELP ME MAKE FUNCTION READFROMLINK RUNABLE WITH THIS LINK*/
             System.Net.WebClient client = new System.Net.WebClient();
             byte[] data = client.DownloadData(url);
@@ -217,13 +232,13 @@ namespace DowloadingData
         {
             if(listData.Count ==0) return;
             var name = listData[0].Symbol + "_" + listData.Count.ToString();
-            using (SaveFileDialog sfd = new SaveFileDialog() { FileName = name +".csv", Filter = "(*.csv)|*.csv }" })
+           // using (SaveFileDialog sfd = new SaveFileDialog() { FileName = name +".csv", Filter = "(*.csv)|*.csv }" })
             {
-                if (sfd.ShowDialog() == DialogResult.OK)
+               // if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     // Stream s = new FileStream(sfd.FileName, FileMode.Create, FileAccess.Write, FileShare.None);
-
-                    var writer = new StreamWriter(sfd.FileName);
+                    var fileName = GetPath() + "\\" + name;
+                    var writer = new StreamWriter(fileName);
                     writer.WriteLine("Date,Open,High,Low,Close,Volume");
                     foreach (var da in listData)
                     {
@@ -235,7 +250,11 @@ namespace DowloadingData
             lblAction.Text = "Ghi du lieu thanh cong";
         }
 
-
+        public string GetPath()
+        {
+                var systemPArth = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                return systemPArth.Remove(systemPArth.LastIndexOf("\\", System.StringComparison.Ordinal));
+        }
        
     }
 }

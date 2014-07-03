@@ -76,7 +76,7 @@ namespace AppTestTool.Utils
             var fileconten = JsonUtils.Serialize(listTask);
             DirectionIO.WriteAllText(DirectionIO.GetPath() + _taskManager, fileconten);
         }
-        public void CreateTask(List<DateTime> fromDate)
+        public void CreateTask(List<DateTime> fromDate, bool isrestart = false)
         {
             var path = DirectionIO.GetPath();
 
@@ -87,17 +87,29 @@ namespace AppTestTool.Utils
                 var task = new TaskManager
                 {
                     TaskCouter = i + 1,
-                    TaskName = string.Format("ANN{0:YYYYMMDD}", taskManager),
+                    TaskName = string.Format("ANN{0:yyyyMMdd}", taskManager),
                     Status = 1,
+                    Day = taskManager.Date,
                 };
                 task.PathFolder = path + "\\" + task.TaskName;
-                DirectionIO.CreateNewFolder(task.PathFolder);
+                if (isrestart)
+                {
+                    DirectionIO.CreateNewFolder(task.PathFolder);
+                }
+                else 
+                if (!DirectionIO.IsExistNewFolder(task.PathFolder))
+                    DirectionIO.CreateNewFolder(task.PathFolder);
                 listTask.Add(task);
                 i++;
             }
 
             var fileconten = JsonUtils.Serialize(listTask);
-            DirectionIO.WriteAllText(DirectionIO.GetPath() + _taskManager, fileconten);
+            if (isrestart)
+            {
+                DirectionIO.WriteAllText(DirectionIO.GetPath() + _taskManager, fileconten);
+            }else 
+            if (!DirectionIO.IsExistFile(DirectionIO.GetPath() + _taskManager))
+                DirectionIO.WriteAllText(DirectionIO.GetPath() + _taskManager, fileconten);
         }
         #region Excel call
         public ResultRunANN GetResultRunANN(string pathfile)

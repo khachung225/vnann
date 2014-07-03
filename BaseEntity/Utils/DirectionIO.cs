@@ -54,5 +54,10 @@ namespace BaseEntity.Utils
                 File.Delete(s);
             }
         }
+        public static void WriteLogFile(string stringcontent)
+        {
+            var parthfile = GetPath() + "\\" + "LogFileAnn.txt";
+            WriteAllText(parthfile,stringcontent);
+        }
     }
 }

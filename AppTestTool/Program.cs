@@ -15,7 +15,7 @@ namespace AppTestTool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTestTool());
+            Application.Run(new PredicDayByDay());
         }
     }
 }

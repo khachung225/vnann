@@ -66,9 +66,20 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FinancialMarketPredictor\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\TaskManager.cs" />
+    <Compile Include="Data\PredicError.cs" />
+    <Compile Include="CommodityResultsGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommodityResultsGraph.Designer.cs">
+      <DependentUpon>CommodityResultsGraph.cs</DependentUpon>
+    </Compile>
     <Compile Include="PredicDayByDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +97,9 @@
     <Compile Include="Utils\DirectionIO.cs" />
     <Compile Include="Utils\TaskTimer.cs" />
     <Compile Include="Utils\JsonUtils.cs" />
+    <EmbeddedResource Include="CommodityResultsGraph.resx">
+      <DependentUpon>CommodityResultsGraph.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PredicDayByDay.resx">
       <DependentUpon>PredicDayByDay.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +164,10 @@
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

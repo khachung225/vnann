@@ -331,6 +331,7 @@ namespace FinancialMarketPredictor
             _network.AddLayer(new BasicLayer(new ActivationTANH(), true, OUTPUT_SIZE));                      /*Output of the network*/
             _network.Structure.FinalizeStructure();                                                         /*Finalize network structure*/
             _network.Reset();                                                                               /*Randomize*/
+            AppGlobol.InitWieght = _network.DumpWeights();
             _network.Structure.HiddentLayer = hiddenLayers;_network.Structure.HiddentUnit = hiddenUnits;
         }
 
@@ -531,7 +532,7 @@ namespace FinancialMarketPredictor
             int index = 0;
             foreach (var sample in _manager.Samples)
             {
-                if (sample.Date.CompareTo(predictFrom) > 0 && sample.Date.CompareTo(predictTo) < 0)
+                if (sample.Date.CompareTo(predictFrom) >= 0 && sample.Date.CompareTo(predictTo) <= 0)
                 {
                     var result = new CommodityResults();
                     _manager.GetInputData(index - INPUT_TUPLES, present);

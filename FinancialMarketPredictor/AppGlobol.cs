@@ -17,5 +17,7 @@ namespace FinancialMarketPredictor
        public static bool Ishoitu { get; set; }
        public static List<CommodityResults> ListResult { get; set; }
        public static DateTime PredicDate { get; set; }
+
+       public static string InitWieght { get; set; }
     }
 }

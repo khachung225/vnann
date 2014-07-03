@@ -70,7 +70,7 @@ namespace Encog.Neural.Networks.Layers
         /// <param name="hasBias">True if this layer has a bias.</param>
         public BasicLayer(IActivationFunction activationFunction,
                           bool hasBias, int neuronCount)
-            : base(activationFunction, neuronCount, (hasBias) ? 0.75d : 0.0d)
+            : base(activationFunction, neuronCount, (hasBias) ? 1d : 0.0d)
         {
         }
 

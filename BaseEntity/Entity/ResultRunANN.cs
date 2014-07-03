@@ -14,5 +14,7 @@ namespace BaseEntity.Entity
         public  int Counter { get; set; }
         public  bool Ishoitu { get; set; }
         public  List<CommodityResults> ListResult { get; set; }
+
+        public string InitWeight { get; set; }
     }
 }

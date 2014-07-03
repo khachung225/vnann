@@ -516,6 +516,8 @@ namespace BaseEntity.Common
             if (symbolcount == 0) return dateTime;
             for (int i = 0; i < symbolcount; i++)
             {
+                var a = _samples[i].Date.Date;
+                var b = _samples[i].Date.Date.CompareTo(dateTime.Date);
                if (_samples[i].Date.Date.CompareTo(dateTime.Date) > 0)
                {
                    return _samples[i].Date.Date;
