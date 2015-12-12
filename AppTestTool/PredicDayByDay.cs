@@ -22,23 +22,26 @@ namespace AppTestTool
     {
         private FinancialPredictorManager _manager;
 
-        private string _pathtosp = "S&P500Index_1104.csv";
+        /// <summary>
+        /// Default path to S&P csv
+        /// </summary>
+        private string _pathToSp = "$SPX_1512.csv";
 
         /// <summary>
         /// Default path to Prime interest rates csv
         /// </summary>
-        private string _pathtoEurUsd = "EUR_USD_1990.csv";
-        private string _pathToUsdJpy = "USD-JPY_1367.csv";
-        
+        private string _pathToEURUSD = "^EURUSD_1556.csv";
+        private string _pathToUSDJPY = "^USDJPY_1556.csv";
+
         /// <summary>
         /// Default path to Dow indexes csv
         /// </summary>
-        private string _pathToDow = "DOWI_index_1104.csv";
+        private string _pathToDow = "$DOWI_1513.csv";
 
-        private string _pathToCommodity = "CTN13_647.csv";
+        private string _pathToCommodity = "CCN13_678.csv";
 
-        private string _pathToXauUsd = "XAU-USD.csv";
-        private string _pathToNikkie = "NKY_index_1074.csv";
+        private string _pathToXAUUSD = "^XAUUSD_1558.csv";
+        private string _pathToNikkie = "$NKY_1469.csv";
 
         private string _fileResult = "/Result.tsk";
 
@@ -62,7 +65,7 @@ namespace AppTestTool
             _dtpPredictFrom.Value = _predictFrom;
             _dtpPredictTo.Value = _predictTo;
              _manager = new FinancialPredictorManager(1, 1);     /*Create new financial predictor manager*/
-            _manager.Load(_pathtosp, _pathToCommodity, _pathToUsdJpy, _pathtoEurUsd, _pathToXauUsd, _pathToNikkie,_pathToDow);     /*Load S&P 500 and prime interest rates*/
+             _manager.Load(_pathToSp, _pathToCommodity, _pathToUSDJPY, _pathToEURUSD, _pathToXAUUSD, _pathToNikkie, _pathToDow);     /*Load S&P 500 and prime interest rates*/
           
         }
         private List<DateTime> GetListDate()
@@ -170,7 +173,7 @@ namespace AppTestTool
         {
             var task = e.UserState as TaskManager;
             progressBar1.Increment(1);
-            if (task != null) txtDetail.Text +=@"\\n" + task.TaskName;
+            if (task != null) txtDetail.Text +=@"\t" + task.TaskName;
         }
 
         private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)

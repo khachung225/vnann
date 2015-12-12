@@ -705,7 +705,7 @@ namespace FinancialMarketPredictor
 
         private readonly Action<int, double, TrainingAlgorithm, DataGridView> addAction = new Action<int, double, TrainingAlgorithm, DataGridView>((epoch, error, algorithm, dgvTrainingResults) =>
                                                                                                                                                    {
-                                                                                                                                                       if(dgvTrainingResults.Rows.Count ==1000) dgvTrainingResults.Rows.Clear();
+                                                                                                                                                       if(dgvTrainingResults.Rows.Count ==500) dgvTrainingResults.Rows.Clear();
                                                                                                                                                        int rowIndex = dgvTrainingResults.Rows.Add(epoch, error, algorithm.ToString());
                                                                                                                                                        dgvTrainingResults.FirstDisplayedScrollingRowIndex = rowIndex;
                                                                                                                                              });

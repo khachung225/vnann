@@ -347,11 +347,12 @@ namespace FinancialMarketPredictor
             int endIndex = -1;
             foreach (var sample in _manager.Samples)
             {
-                if (sample.Date.CompareTo(trainFrom) < 0)
+                if (sample.Date.CompareTo(trainFrom) <= 0)
                     startIndex++;
                 if (sample.Date.CompareTo(trainTo) < 0)
                     endIndex++;
             }
+            
             // create a sample factor across the training area
             _trainingSize = endIndex - startIndex;
             _input = new double[_trainingSize][];
@@ -450,12 +451,12 @@ namespace FinancialMarketPredictor
                     error = train.Error;
                     if (status != null)
                         status.Invoke(epoch, error, TrainingAlgorithm.Resilient);
-                    
-                   // if (LeanOverFitting.IsOverfilling(error))
-                   //     AbortTraining();
+
+                    //if (LeanOverFitting.IsOverfilling(error))
+                    //    AbortTraining();
                     listErr.Add(new MyError{index = epoch,value = error});
 
-                    if (epoch > 10000)
+                    if (epoch > 8000)
                     {
                         istoitu = false;
                         break;

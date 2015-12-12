@@ -64,7 +64,7 @@ namespace Encog.Neural.Networks.Layers
         /// Construct this layer with a non-default activation function, also
         /// determine if a bias is desired or not.
         /// </summary>
-        ///
+        ///0.75
         /// <param name="activationFunction">The activation function to use.</param>
         /// <param name="neuronCount">How many neurons in this layer.</param>
         /// <param name="hasBias">True if this layer has a bias.</param>

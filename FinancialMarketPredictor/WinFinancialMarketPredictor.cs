@@ -22,13 +22,13 @@ namespace FinancialMarketPredictor
         /// <summary>
         /// Default path to S&P csv
         /// </summary>
-        private string _pathToSp = "S&P500Index_1104.csv";
+        private string _pathToSp = "$SPX_1512.csv";
 
         /// <summary>
         /// Default path to Prime interest rates csv
         /// </summary>
-        private string _pathToEURUSD = "EUR_USD_1990.csv";
-        private string _pathToUSDJPY = "USD-JPY_1367.csv";
+        private string _pathToEURUSD = "^EURUSD_1556.csv";
+        private string _pathToUSDJPY = "^USDJPY_1556.csv";
 
         /// <summary>
         /// Default path to Nasdaq indexes csv
@@ -38,12 +38,12 @@ namespace FinancialMarketPredictor
         /// <summary>
         /// Default path to Dow indexes csv
         /// </summary>
-        private string _pathToDow = "DOWI_index_1104.csv";
+        private string _pathToDow = "$DOWI_1513.csv";
 
-        private string _pathToCommodity = "CTN13_647.csv";
+        private string _pathToCommodity = "SBN13_615.csv";
 
-        private string _pathToXAUUSD = "XAU-USD.csv";
-        private string _pathToNikkie = "NKY_index_1074.csv";
+        private string _pathToXAUUSD = "^XAUUSD_1558.csv";
+        private string _pathToNikkie = "$NKY_1469.csv";
    
         /// <summary>
         /// Predictor
@@ -119,7 +119,8 @@ namespace FinancialMarketPredictor
             //lấy dữ liệu từ vùng nhớ static
             if (AppGlobol.IsAutoRun)
             {
-                _predictFrom = _predictTo = AppGlobol.PredicDate;
+                _predictFrom =  AppGlobol.PredicDate;
+                _predictTo = AppGlobol.PredicDate.AddDays(2);
                 _learnTo = AppGlobol.PredicDate;
                 _learnTo =_learnTo.AddDays(-1);
             }
@@ -220,6 +221,7 @@ namespace FinancialMarketPredictor
         /// </summary>
         private void WinFinancialMarketPredictorLoad(object sender, EventArgs e)
         {
+            Text = DirectionIO.GetPath();
             SetPathsInTextBoxes();  /*Set path in textboxes*/
             GraphInit(DoThi_GiaiTri);
             if (AppGlobol.IsAutoRun)
@@ -489,7 +491,7 @@ namespace FinancialMarketPredictor
         {
             GraphPane myPane1 = DoThi.GraphPane; // Khai báo sửa dụng Graph loại GraphPane;
 
-            myPane1.Title.Text = "Đồ thị dự đoán giá Close Mã GD: KCZ13";
+            myPane1.Title.Text = "Đồ thị dự đoán giá Close Mã GD: " + _pathToCommodity.Substring(0,5);
             myPane1.XAxis.Title.Text = "Ngày dự đoán";
             myPane1.YAxis.Title.Text = "Giá trị dự đoán";
             // Định nghĩa list để vẽ đồ thị. Để các bạn hiểu rõ cơ chế làm việc ở đây khai báo 2 list điểm <=> 2 đường đồ thị

@@ -1,5 +1,5 @@
 ﻿// ciumac.sergiu@gmail.com
-
+#define Debug
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -117,6 +117,33 @@ namespace BaseEntity.Common
                 //input[i*4 + 3]   = sample.VolumeCommo;
             }
         }
+        public void GetInputData(int offset, double[] input, out List<CommodityIndexes> dateTime)
+        {
+            dateTime= new List<CommodityIndexes>();
+            int total = 0;
+            int k = 0;
+            // get SP500, prime data, NASDAQ, Dow
+            for (int i = 0; i < _inputSize; i++)
+            {
+                CommodityIndexes sample = _samples[offset + i];
+                k = 0;
+
+                foreach (CommodityIndexe index in Enum.GetValues(typeof(CommodityIndexe)))
+                {
+
+                    if (sample.IsSetValue((int)index))
+                    {
+                        input[i * total + k] = sample.GetValue((int)index);
+                        k++;
+                    }
+                }
+                if (total < 1)
+                {
+                    total = k;
+                }
+                dateTime.Add(sample);
+            }
+        }
 
         /// <summary>
         /// Get output data - S&P 500 Index, Prime Interest Rate, Dow index, Nasdaq index
@@ -129,6 +156,15 @@ namespace BaseEntity.Common
         /// values from [12581..12590]. The actual values will be equal to the parameters stored in the <code>12581 + _inputSize</code>
         /// place => 12591 index.
         /// </remarks>
+        public void GetOutputData(int offset, double[] output, out CommodityIndexes insample)
+        {
+            CommodityIndexes sample = _samples[offset + _inputSize];
+            output[0] = sample.GetValue((int)CommodityIndexe.CloseIndex);
+            //output[1] = sample.PrimeInterestRate;
+            //output[2] = sample.Commodity;
+            //output[3] = sample.VolumeCommo;
+            insample = sample;
+        }
         public void GetOutputData(int offset, double[] output)
         {
             CommodityIndexes sample = _samples[offset + _inputSize];
@@ -138,7 +174,6 @@ namespace BaseEntity.Common
             //output[3] = sample.VolumeCommo;
             
         }
-
         #region Get indexes
 
         public double GetMax(int index)
@@ -161,7 +196,9 @@ namespace BaseEntity.Common
 
             foreach (PData data in _dictionary[index])
             {
-                if (data.Date.CompareTo(date) >= 0)
+                if (data.Date.CompareTo(date) == 0)
+                    return data.Amount;
+                if (data.Date.CompareTo(date) > 0)
                 {
                     return currentAmount;
                 }
@@ -416,7 +453,7 @@ namespace BaseEntity.Common
         {
             get { return _samples.Count; }
         }
-//#define Debug
+
         /// <summary>
         /// Stitch S&P 500 indexes to Prime Interest Rates according to the date parameter
         /// </summary>
@@ -501,6 +538,35 @@ namespace BaseEntity.Common
                     }
                 }
             }
+            #if Debug
+            var fileName = AppDomain.CurrentDomain.BaseDirectory + "MinMaxData.csv";
+            StreamWriter textWriter = null;
+            try
+            {
+                textWriter = new StreamWriter(fileName);
+                textWriter.WriteLine("Data,Max,min");
+                foreach (CommodityIndexe index in Enum.GetValues(typeof(CommodityIndexe)))
+                {
+                    var content = string.Format("{0},{1},{2}", index.ToString(), _dicMaxValue[(int) index],
+                                                _dicMinValue[(int) index]);
+
+                    textWriter.WriteLine(content);
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                if (textWriter != null)
+                    textWriter.Close();
+            }
+
+            
+
+#endif
         }
 
         /// <summary>
