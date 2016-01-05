@@ -1,9 +1,10 @@
-AppTestTool/bin/
-DowloadingData/bin/
+AppTestTool/bin/ 
+ANFISPrediction/bin/
 AppTestTool/obj/
 DowloadingData/obj/
+DowloadingData/bin/
 FinancialMarketPredictor/obj/
 FinancialMarketPredictor/bin/
 BaseEntity/obj/
-BaseEntity/bin/
+BaseEntity/bin/ 
  
