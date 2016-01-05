@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExcelLibrary">
-      <HintPath>..\FinancialMarketPredictor\ExcelLibrary.dll</HintPath>
+      <HintPath>..\CommodityPredictor\ExcelLibrary.dll</HintPath>
     </Reference>
     <Reference Include="fastjson">
       <HintPath>..\packages\fastJSON.2.1.0.0\lib\net35\fastjson.dll</HintPath>
@@ -68,7 +68,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FinancialMarketPredictor\ZedGraph.dll</HintPath>
+      <HintPath>..\CommodityPredictor\ZedGraph.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
