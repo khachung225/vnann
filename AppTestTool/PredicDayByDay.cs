@@ -20,7 +20,7 @@ namespace AppTestTool
 {
     public partial class PredicDayByDay : Form
     {
-        private FinancialPredictorManager _manager;
+        private PredictorManager _manager;
 
         /// <summary>
         /// Default path to S&P csv
@@ -38,7 +38,7 @@ namespace AppTestTool
         /// </summary>
         private string _pathToDow = "$DOWI_1513.csv";
 
-        private string _pathToCommodity = "CCN13_678.csv";
+        private string _pathToCommodity = "KCZ13_718.csv";
 
         private string _pathToXAUUSD = "^XAUUSD_1558.csv";
         private string _pathToNikkie = "$NKY_1469.csv";
@@ -59,14 +59,19 @@ namespace AppTestTool
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.WorkerSupportsCancellation = true;
         }
-
+        //init 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _pathToCommodity = txtcommodityc.Text;
+            if (_manager != null) 
+                _manager = null;
+            _manager = new PredictorManager(1, 1);     /*Create new financial predictor manager*/
+            _manager.Load(_pathToSp, _pathToCommodity, _pathToUSDJPY, _pathToEURUSD, _pathToXAUUSD, _pathToNikkie, _pathToDow);     /*Load S&P 500 and prime interest rates*/
+        }
         private void PredicDayByDay_Load(object sender, EventArgs e)
         {
             _dtpPredictFrom.Value = _predictFrom;
             _dtpPredictTo.Value = _predictTo;
-             _manager = new FinancialPredictorManager(1, 1);     /*Create new financial predictor manager*/
-             _manager.Load(_pathToSp, _pathToCommodity, _pathToUSDJPY, _pathToEURUSD, _pathToXAUUSD, _pathToNikkie, _pathToDow);     /*Load S&P 500 and prime interest rates*/
-          
         }
         private List<DateTime> GetListDate()
         {

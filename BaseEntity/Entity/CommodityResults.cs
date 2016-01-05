@@ -1,5 +1,4 @@
 ﻿
-// ciumac.sergiu@gmail.com
 
 using System;
 

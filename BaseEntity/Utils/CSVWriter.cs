@@ -1,4 +1,3 @@
-// ciumac.sergiu@gmail.com
 
 using System.IO;
 using System.Text;

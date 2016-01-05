@@ -1,5 +1,4 @@
-﻿// ciumac.sergiu@gmail.com
-#define Debug
+﻿#define Debug
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,9 +8,9 @@ using BaseEntity.Utils;
 namespace BaseEntity.Common
 {
     /// <summary>
-    /// Financial predictor manager
+    /// predictor manager
     /// </summary>
-    public sealed class FinancialPredictorManager
+    public sealed class PredictorManager
     {
         #region Private Members
       
@@ -62,7 +61,7 @@ namespace BaseEntity.Common
         /// </summary>
         /// <param name="inputSize">Input size</param>
         /// <param name="outputSize">Output size</param>
-        public FinancialPredictorManager(int inputSize, int outputSize)
+        public PredictorManager(int inputSize, int outputSize)
         {
             if (inputSize <= 0)
                 throw new ArgumentException("inputSize cannot be less than 0");

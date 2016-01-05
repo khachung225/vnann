@@ -1,4 +1,3 @@
-// ciumac.sergiu@gmail.com
 
 using System;
 using System.Collections.Generic;
